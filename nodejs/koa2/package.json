@@ -1,0 +1,26 @@
+{
+  "name": "koa2-seed",
+  "version": "1.0.0",
+  "description": "a seed for koa2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "arthur",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "fs": "0.0.1-security",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compose": "^4.1.0",
+    "koa-mount": "^3.0.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "log4js": "^3.0.5",
+    "lowdb": "^1.0.0",
+    "path": "^0.12.7",
+    "rd": "^2.0.1",
+    "strip-path": "^1.0.0"
+  }
+}

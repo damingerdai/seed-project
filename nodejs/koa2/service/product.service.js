@@ -24,7 +24,7 @@ ProductService.add = (id, name) => {
     db.get(table).push({ id: id, name: name });
 }
 
-ProudctService.update = (id, name) => {
+ProductService.update = (id, name) => {
     db.get(table).find({ id: id }).assign({ name: name });
 }
 

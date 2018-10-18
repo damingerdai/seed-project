@@ -14,4 +14,4 @@ app.use(rest());
 app.use(enrouten({directory:'controllers'}));
 
 
-app.listen(8080);
+app.listen(config.port);

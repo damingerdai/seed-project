@@ -1,11 +1,11 @@
 'use strict';
 
 var getConfigFile = () => {
-    if (process.env.Config) {
-        return '../config/' + process.env.Config + '.json';
+    if (process.env.NODE_ENV && process.env.NODE_ENV != 'default') {
+        return process.env.NODE_ENV + '.json';
     } else {
-        return '../config/config.json';
+        return 'config.json';
     }
 }
 
-module.exports = getConfigFile;
+module.exports =  { getConfigFile };

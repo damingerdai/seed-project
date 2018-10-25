@@ -3,6 +3,7 @@ const serve = require('koa-static');
 const bodyParser = require('koa-bodyparser');
 const enrouten = require('./libs/enrouten');
 const advice = require('./middlewares/advice').advice;
+const rest = require('./middlewares/rest').restify;
 const configFile = require('./libs/config').getConfigFile();
 const config = require('./config/' + configFile);
 const app = new Koa();

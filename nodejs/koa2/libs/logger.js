@@ -10,7 +10,7 @@ log4js.configure({
         common: {
             type: 'dateFile',
             filename: 'logs/common.log',
-            pattern: 'common-YYYY-MM-dd.log',
+            pattern: '-yyyy-MM-dd',
         }
     },
     categories: {

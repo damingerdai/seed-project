@@ -1,0 +1,48 @@
+<div class="container">
+  <div #myholder style="margin: 10px" id="myholder">
+    test
+  </div>
+  <div style="margin: 10px">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let label of labels">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ label.name }}
+          </mat-panel-title>
+          <mat-panel-description>
+            请选择{{label.name }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-grid-list cols="2">
+          <mat-grid-tile *ngFor="let item of label.labels">
+            <button mat-fab (click)="addCell(label.name, item.text)">{{ item.text }}</button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            高级选项
+          </mat-panel-title>
+          <mat-panel-description>
+            高级选项
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-selection-list>
+          <mat-list-option matTooltip="将自动修改标签执行的顺序">
+            <div>
+              启动性能优化
+            </div>
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-list>
+      <h3 mat-subheader>操作</h3>
+      <mat-list-item>
+        <button mat-flat-button color="primary">保存</button>
+        <button mat-flat-button color="accent" (click)="clear()">清除</button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

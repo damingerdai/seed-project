@@ -1,0 +1,30 @@
+{
+    "statusCode": 200,
+    "data": [
+        {
+            "key": 1,
+            "name": "开始选人",
+            "source": "/assets/image/image27.png"
+        },
+        {
+            "key": 2,
+            "name": "标签选人",
+            "source": "/assets/image/image34.png"
+        },
+        {
+            "key": 3,
+            "name": "属性选人",
+            "source": "/assets/image/image33.png"
+        },
+        {
+            "key": 4,
+            "name": "聚合选人",
+            "source": "/assets/image/image32.png"
+        },
+        {
+            "key": 5,
+            "name": "导出人群",
+            "source": "/assets/image/image31.png"
+        }
+    ]
+}

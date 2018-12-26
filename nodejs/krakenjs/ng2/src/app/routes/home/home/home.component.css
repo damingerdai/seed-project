@@ -1,0 +1,15 @@
+.container {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.post-tile {
+    align-self: flex-start;
+    width: 140%;
+    margin: 0px, 5px, 5px 5px;
+    max-height: 500px;
+}
+
+.mat-card-image {
+    max-height: 300px;
+}

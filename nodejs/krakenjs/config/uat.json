@@ -1,0 +1,134 @@
+{
+  "express": {
+    "view cache": false,
+    "view engine": "dust",
+    "views": "path:./.build/templates",
+    "trust proxy": true
+  },
+  "view engines": {
+    "dust": {
+      "module": "engine-munger",
+      "renderer": {
+        "method": "dust",
+        "arguments": [{
+            "cache": false
+          },
+          {
+            "views": "config:express.views",
+            "view engine": "config:express.view engine",
+            "specialization": "config:specialization",
+            "i18n": "config:i18n"
+          }
+        ]
+      }
+    }
+  },
+  "logger": {
+    "location": "./logs",
+    "config": {
+      "appenders": [{
+          "type": "console",
+          "category": "application",
+          "layout": {
+            "type": "pattern",
+            "pattern": "%[%d %p -%] %m"
+          }
+        },
+        {
+          "type": "dateFile",
+          "category": "application",
+          "filename": "marketplace.log",
+          "pattern": "-yyyy-MM-dd",
+          "layout": {
+            "type": "pattern",
+            "pattern": "%d %p - %m"
+          }
+        },
+        {
+          "category": "access",
+          "type": "dateFile",
+          "filename": "access.log",
+          "pattern": "-yyyy-MM-dd",
+          "level": "info",
+          "layout": {
+            "type": "pattern",
+            "pattern": "%d %p - %m"
+          }
+        }
+      ],
+      "levels": {
+        "application": "DEBUG"
+      }
+    }
+  },
+  "middleware": {
+    "static": {
+      "module": {
+        "arguments": [
+          "path:./.build"
+        ]
+      }
+    },
+    "appsec": {
+      "module": {
+        "arguments": [{
+          "xframe": "SAMEORIGIN",
+          "p3p": false,
+          "csp": false
+        }]
+      }
+    },
+
+    "cookie-parser": {
+      "enabled": true,
+      "priority": 30,
+      "module": {
+        "name": "cookie-parser"
+      }
+    },
+    "logger": {
+      "route": "/**",
+      "enabled": true,
+      "priority": 31,
+      "module": {
+        "name": "path:./middlewares/logger"
+      }
+    },
+    "router": {
+      "priority": 34,
+      "module": {
+        "arguments": [{
+          "directory": "path:./controllers"
+        }]
+      }
+    },
+
+    "expressView": {
+      "priority": 100,
+      "enabled": true,
+      "module": {
+        "name": "engine-munger/lib/expressView"
+      }
+    },
+    "fileNotFound": {
+      "enabled": true,
+      "priority": 130,
+      "module": {
+        "name": "kraken-js/middleware/404",
+        "arguments": [
+          "errors/404"
+        ]
+      }
+    },
+    "serverError": {
+      "enabled": true,
+      "priority": 140,
+      "module": {
+        "name": "kraken-js/middleware/500",
+        "arguments": [
+          "errors/500"
+        ]
+      }
+    }
+  }
+}

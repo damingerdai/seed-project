@@ -1,0 +1,10 @@
+.app-container {
+    position: relative;
+    padding-top: 64px; 
+    height: calc(100vh - 64px)
+}
+.app-sidenav {
+    position: absolute;
+    padding-top: 64px;  
+    height: calc(100vh - 64px) 
+}

@@ -1,0 +1,1 @@
+export HOST=127.0.0.1 && export PORT=8080 && export NODE_ENV=production && /usr/local/bin/node server.js & 

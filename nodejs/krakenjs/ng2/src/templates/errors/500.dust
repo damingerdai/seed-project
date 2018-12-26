@@ -1,0 +1,9 @@
+{>"errors/master" /}
+<div class="container markplaceBody">
+	<div class="col-md-10 col-md-offset-1 pl5">
+		<h3 class="error-404-505">We are sorry but we could not find that page.</h3>
+		<h3 class="error-404-505">
+			Please try again or contact support if encounter this issue again - error 500
+		</h3>
+		<img src="/webresource/images/error.png" class="error-img"></div>
+</div>

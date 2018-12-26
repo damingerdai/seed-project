@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="card diagramDiv card-shadow" #diagramDiv ></div>
+  <div class="card card-shadow" style="margin: 10px; margin-top: 0px; ">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            流程
+          </mat-panel-title>
+          <mat-panel-description>
+            选择流程
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <ng-container *ngFor="let label of labels">
+            <a mat-list-item (click)="add(label.key)">
+              <img matListAvatar [src]="label.source" />
+              <p matLine>{{ label.name }}</p>
+            </a>
+          </ng-container>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-selection-list (selectionChange)="selectionChange($event)">
+        <h3 mat-subheader>高级</h3>
+        <mat-list-option matTooltip="将调整布局">
+          布局优化
+        </mat-list-option>
+        <mat-list-option matTooltip="将自动修改标签执行的顺序">
+          启动性能优化
+        </mat-list-option>
+      </mat-selection-list>
+      <mat-list>
+        <h3 mat-subheader>操作</h3>
+        <mat-list-item>
+          <button mat-flat-button color="primary" (click)="save()">保存</button>
+          <button mat-flat-button color="warn" (click)="clear()">清除</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-accordion>
+  </div>
+</div>

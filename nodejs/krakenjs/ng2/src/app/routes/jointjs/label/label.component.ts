@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import * as jQuery from 'jquery';
 import * as _ from 'lodash';
@@ -18,7 +18,7 @@ import { DataResponse } from '../../../modal/response';
 })
 export class LabelComponent implements OnInit, DoCheck, AfterViewInit {
 
-  @ViewChild('myholder')
+  @ViewChild('myholder', { static: false })
   private myholder: ElementRef;
 
   graph = new joint.dia.Graph;

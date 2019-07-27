@@ -7,7 +7,8 @@ import {
   Renderer,
   Input
 } from '@angular/core';
-import { MatSelectionListChange, MatSnackBar } from '@angular/material';
+import { MatSelectionListChange } from '@angular/material/list';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import * as go from 'gojs';
 
 // This requires us to include
@@ -32,7 +33,7 @@ export class LabelComponent implements OnInit, AfterViewInit {
   private diagram: go.Diagram = new go.Diagram();
   private model = new go.GraphLinksModel();
 
-  @ViewChild('diagramDiv')
+  @ViewChild('diagramDiv', { static: false })
   private diagramRef: ElementRef;
 
   labels: any[] = [];

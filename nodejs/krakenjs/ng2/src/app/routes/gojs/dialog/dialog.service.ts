@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { GojsModule } from '../gojs.module';
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { DialogComponent } from './dialog.component';
 
 @Injectable({

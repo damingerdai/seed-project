@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 
 import { MenuService } from '../../core/menu/menu.service';
 import { IMenu } from '../../routes/menu';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,7 +14,7 @@ import { MatSidenav } from '@angular/material';
 })
 export class SidebarComponent implements OnInit, OnDestroy {
 
-  @ViewChild('sideNav')
+  @ViewChild('sideNav', { static: false })
   sideNav: MatSidenav;
 
   _opended = true;
